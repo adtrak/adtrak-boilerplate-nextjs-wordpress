@@ -1,19 +1,24 @@
-# Nextjs Boilerplate
-A [Next.js](https://nextjs.org/) starter kit with [Framer Motion](https://www.framer.com/motion/) and [TailwindCSS](https://tailwindcss.com/) plugged in
+# Adtrak NextJs Boilerplate with WordPress headless CMS
+A [Next.js](https://nextjs.org/) & WordPress starter kit with [Framer Motion](https://www.framer.com/motion/) and [TailwindCSS](https://tailwindcss.com/) plugged in
 
-The starter kit has several GIT branches.
+The WordPress install can be found at [adtrak-next.adtrak.agency](https://adtrak-next.adtrak.agency/). The logins can be found in Salesforce [here](https://adtrak.lightning.force.com/lightning/r/Password__c/a0J08000018LHt5EAG/view)
 
--  **Master Branch**
-Standard [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) project stripped back with [TailwindCSS](https://tailwindcss.com/) and [Framer Motion](https://www.framer.com/motion/) included.
+There is a working React version of ALD that uses localStorage to store the query values for 30 days. After 30 days, the storage items will be destroyed when the user next visits the page.
 
--  **next-datocms**
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) project designed to work with a headless [DatoCMS](https://www.datocms.com/) instance, [TailwindCSS](https://tailwindcss.com/) and [Framer Motion](https://www.framer.com/motion/) included. 
+## Global Data
+app.js generates a globalData object containing:
+- Global Options (site title etc from WordPress)
+- Site Options (ACF Fields from custom options page)
+- Marketing (ACF Fields from custom options page)
+- Primary and Secondary menus 
 
--  **next-wordpress**
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) project designed to work with headless [WordPress](https://wordpress.com/), [TailwindCSS](https://tailwindcss.com/) and [Framer Motion](https://www.framer.com/motion/) included. 
+The globalData object is passed around using Context so we don't have to query it on every page. 
 
--  **next-prismic**
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) project designed to work with a headless [Prismic](https://prismic.io/) instance, [TailwindCSS](https://tailwindcss.com/) and [Framer Motion](https://www.framer.com/motion/) included.
+## Routes
+Page routes have been configured for parent & child pages, and should work out of the box. 
+Location page routes will be generated from the Locations custom post type
+News pages will be configured from the Posts post-type (standard Posts in WordPress).
+- News items will revalidate every 60 seconds, meaning new posts will have routes generated automatically without the need for a project rebuild.
 
 ## Learn More
 
@@ -24,8 +29,3 @@ To learn more about Next.js, take a look at the following resources:
 -  [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js. 
