@@ -3,7 +3,7 @@ A [Next.js](https://nextjs.org/) & WordPress starter kit with [Framer Motion](ht
 
 The WordPress install can be found at [adtrak-next.adtrak.agency](https://adtrak-next.adtrak.agency/). The logins can be found in Salesforce [here](https://adtrak.lightning.force.com/lightning/r/Password__c/a0J08000018LHt5EAG/view)
 
-There is a working React version of ALD that uses ```localStorage``` (via Store.js) to store the query values for 30 days. After 30 days, the storage items will be destroyed when the user next visits the page.
+There is a working React version of ALD that uses ```localStorage``` (via [Store.js](https://www.npmjs.com/package/store-js)) to store the query values for 30 days. After 30 days, the storage items will be destroyed when the user next visits the page.
 
 ## Global Data
 ```app.js``` generates a ```globalData``` object containing:
