@@ -15,10 +15,10 @@ app.js generates a globalData object containing:
 The globalData object is passed around using Context so we don't have to query it on every page. 
 
 ## Routes
-Page routes have been configured for parent & child pages, and should work out of the box. 
-Location page routes will be generated from the Locations custom post type
-News pages will be configured from the Posts post-type (standard Posts in WordPress).
-- News items will revalidate every 60 seconds, meaning new posts will have routes generated automatically without the need for a project rebuild.
+- Page routes have been configured for parent & child pages, and should work out of the box. 
+- Location page routes will be generated from the Locations custom post type
+- News pages will be configured from the Posts post-type (standard Posts in WordPress).
+-  - News items will revalidate every 60 seconds, meaning new posts will have routes generated automatically without the need for a project rebuild.
 
 ## Learn More
 
